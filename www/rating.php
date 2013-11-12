@@ -29,7 +29,7 @@
 	echo "
 	  <tr> 
 	    <td> ".$n.". </td>
-	    <td> <a href = \"user.php?oppId=".$player["id"]."&myLogin=".$myLogin."\">".$player["login"]." </a> </td>
+	    <td> <a href = \"user.php?oppId=".$player["id"]."\">".$player["login"]." </a> </td>
 		<td> ".$rusFrac[$player["fraction"]]." </td>
 		<td> ".$player["points"]."</td>
 	  </tr>
@@ -46,7 +46,6 @@
   <option value = \"elph\"> Эльф </option>
   </select> <br>
   <input type = submit name = \"go\" value = \"Посмотреть\">
-  <input type = hidden name = \"myLogin\" value = \"".$myLogin."\">
   </form>";
   if (isset($fraction)) {
     echo "<br> Или перейти к <form action = \"rating.php\" method = post> 

@@ -1,9 +1,11 @@
 <?php
   require_once "mysqlCon.php";
-  
+  session_start();
+	
   $opponentLogin = $_REQUEST["opponentLogin"];
   $myLogin = $_REQUEST["login"];
   $ct = mysql_result(mysql_query("SELECT COUNT(*) FROM players WHERE login = '".$opponentLogin."'"), 0, 0);
+  $me = mysql_fetch_assoc(mysql_query("SELECT * FROM players WHERE login = '".$myLogin."'"));  
   if ($ct == 0) {
     echo "Увы, еще никто не назывался таким именем! Вспомни-ка получше имя того подлеца... или поищи его в рейтингах!";
 	echo "

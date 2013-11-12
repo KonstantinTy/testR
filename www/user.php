@@ -1,8 +1,9 @@
 <?php
   require_once "mysqlCon.php";
-  
+  session_start();
+	
   $id = $_REQUEST["oppId"];
-  $myLogin = $_REQUEST["myLogin"];
+  $myLogin = $_SESSION["login"];
   $user = mysql_fetch_assoc(mysql_query("SELECT * FROM players WHERE id = '".$id."'"));
   $fractionChanges = array (
 	  "rusher" => "рашер",

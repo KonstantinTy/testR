@@ -7,6 +7,8 @@
   if ($ct  == 0) {
     echo "¬еро€тно, ты ошибс€ со своим секретным словом, друг, ишь какое оно у теб€ мудреное!";
    } else {
+    session_start();
+	$_SESSION["login"] = $login;
     echo "ѕривет, старый друг $login ! <br>";
 	$usr = mysql_fetch_assoc(mysql_query("SELECT * FROM players WHERE login = '".$login."' AND password = '".$password."'"));
 	$points = $usr["points"];
